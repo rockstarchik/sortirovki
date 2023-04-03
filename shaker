@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void itc_ex(vector <int> mass) {
+	for (int i = 0; i < mass.size()-1; i++) {
+		cout << mass[i] << ' ';
+	}
+}
+
+void itc_shaker_sort(vector <int> mass) {
+	int a;
+	for (int k = 0; k < mass.size(); k++) {
+		for (int i = 0; i < mass.size() - 1 - k; i++) {
+			if (mass[i] > mass[i + 1]) {
+				a = mass[i];
+				mass[i] = mass[i + 1];
+				mass[i + 1] = a;
+			}
+			itc_ex(mass);
+			//for (int p = 0; p < mass.size() - 1; p++) {
+				//cout << mass[p] << ' ';
+			//}
+			cout << mass[mass.size() - 1] << endl;
+		}
+		for (int q = mass.size() - 1 - k; q > k; q--) {
+			if (mass[q] < mass[q - 1]) {
+				a = mass[q];
+				mass[q] = mass[q - 1];
+				mass[q - 1] = a;
+			}
+			itc_ex(mass);
+			//for (int p = 0; p < mass.size() - 1; p++) {
+				//cout << mass[p] << ' ';
+			//}
+			cout << mass[mass.size() - 1] << endl;
+		}
+	}
+}
