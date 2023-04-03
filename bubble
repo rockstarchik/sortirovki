@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void itc_ex(vector <int> mass) {
+	for (int i = 0; i < mass.size(); i++) {
+		cout << mass[i];
+	}
+}
+
+void itc_bubble_sort(vector <int> mass) {
+	int a;
+	for (int k = 0; k < mass.size(); k++) {
+		for (int i = 0; i < mass.size() - 1 - k; i++) {
+			if (mass[i] > mass[i + 1]) {
+				a = mass[i];
+				mass[i] = mass[i + 1];
+				mass[i + 1] = a;
+			}
+			for (int p = 0; p < mass.size()-1; p++) {
+				cout << mass[p] << ' ';
+			}
+			cout << mass[mass.size() - 1] << endl;
+		}
+
+	}
+}
+int main() {
+	int a, w;
+	cin >> a;
+	vector <int> pop;
+	for (int b = 0; b < a; b++) {
+		cin >> w;
+		pop.push_back(w);
+	}
+	itc_bubble_sort(pop);
+    return 0;
+}
